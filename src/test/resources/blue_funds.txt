@@ -1,0 +1,8 @@
+LP,type,name
+1,POLISH,Fundusz Polski 1
+2,POLISH,Fundusz Polski 2
+3,POLISH,Fundusz Polski 3
+4,FOREIGN,Fundusz Zagraniczny 1
+5,FOREIGN,Fundusz Zagraniczny 2
+6,FOREIGN,Fundusz Zagraniczny 3
+7,CASH,Fundusz Pieniężny 1
