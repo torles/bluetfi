@@ -5,24 +5,17 @@ public enum InvestingStyle {
     BALANCED(0.3, 0.6, 0.1),
     AGGRESSIVE(0.4, 0.2, 0.4);
 
-    private Double polishPerc, foreignPerc, cashPerc;
+    private Double[] percentages;
 
     private InvestingStyle(Double polishPerc, Double foreignPerc, Double cashPerc) {
-        this.polishPerc = polishPerc;
-        this.foreignPerc = foreignPerc;
-        this.cashPerc = cashPerc;
+        percentages = new Double[3];
+        percentages[0] = polishPerc;
+        percentages[1] = foreignPerc;
+        percentages[2] = cashPerc;
     }
 
-    public Double getPolishPerc() {
-        return polishPerc;
-    }
-
-    public Double getForeignPerc() {
-        return foreignPerc;
-    }
-
-    public Double getCashPerc() {
-        return cashPerc;
+    public Double[] getPercentages() {
+        return percentages;
     }
 
 }

@@ -47,9 +47,12 @@ public class BlueInvestmentService implements InvestmentService {
                             .collect(Collectors.groupingBy(Fund::getType, LinkedHashMap::new,
                                     Collectors.mapping(fund -> fund, Collectors.toList())));
             Double amountToReturn = Double.valueOf(amount);
-            amountToReturn -= serviceInvestmentByFundType(amount, style.getPolishPerc(), fundsByType, FundType.POLISH);
-            amountToReturn -= serviceInvestmentByFundType(amount, style.getForeignPerc(), fundsByType, FundType.FOREIGN);
-            amountToReturn -= serviceInvestmentByFundType(amount, style.getCashPerc(), fundsByType, FundType.CASH);
+            int i = 0;
+            for(Double perc : style.getPercentages()) {
+                amountToReturn -= serviceInvestmentByFundType(amount, perc, fundsByType, FundType.values()[i]);
+                i++;
+            }
+
             if(amountToReturn > 0) {
                 returnToInvestor(amountToReturn);
             }
